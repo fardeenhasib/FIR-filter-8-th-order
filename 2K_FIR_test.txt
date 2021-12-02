@@ -1,0 +1,218 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 04/13/2021 09:42:49 PM
+// Design Name: 
+// Module Name: testbench_15k
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Author: Fardeen
+////////////////////////////////////////////////////////////////////////////////
+
+
+module tb_2k_FIR;
+
+    // Inputs
+    reg clk, reset;
+    reg signed [31:0] filter_in;
+
+    // Outputs
+    wire signed [63:0] filter_out;
+
+    // Instantiate the Unit Under Test (UUT)
+
+    
+     filter_8th_project uut
+                   (
+                    .clk (clk),
+                    .reset (reset),
+                    .filter_in (filter_in),
+                    .filter_out (filter_out)
+                    );
+
+    // Generate clock with 100ns period
+    initial
+           $monitor(,$time,"filter_in=%d,filter_out=%d",filter_in,filter_out);
+    initial clk = 0;
+  
+    always #100 clk = ~clk;
+       
+
+
+
+    
+    // Initialize and pass sinusoidal input data of 2kHz with sampling frequency of 48kHz   
+    initial begin
+		filter_in = 0; reset = 1; clk = 0; #100;
+        reset = 1; #200;
+        reset = 0;
+        //filter_in = 0          ;#100;
+        filter_in =     271391; #100;
+        filter_in =     524288; #100;
+        filter_in =     741455; #100;
+        filter_in =     908093; #100;
+        filter_in =    1012846; #100;
+        filter_in =    1048576; #100;
+        filter_in =    1012846; #100;
+        filter_in =     908093; #100;
+        filter_in =     741455; #100;
+        filter_in =     524288; #100;
+        filter_in =     271391; #100;
+        filter_in =          0; #100;
+        filter_in =    -271391; #100;
+        filter_in =    -524288; #100;
+        filter_in =    -741455; #100;
+        filter_in =    -908093; #100;
+        filter_in =   -1012846; #100;
+        filter_in =   -1048576; #100;
+        filter_in =   -1012846; #100;
+        filter_in =    -908093; #100;
+        filter_in =    -741455; #100;
+        filter_in =    -524288; #100;
+        filter_in =    -271391; #100;
+        filter_in =          0; #100;
+        filter_in =     271391; #100;
+        filter_in =     524288; #100;
+        filter_in =     741455; #100;
+        filter_in =     908093; #100;
+        filter_in =    1012846; #100;
+        filter_in =    1048576; #100;
+        filter_in =    1012846; #100;
+        filter_in =     908093; #100;
+        filter_in =     741455; #100;
+        filter_in =     524288; #100;
+        filter_in =     271391; #100;
+        filter_in =          0; #100;
+        filter_in =    -271391; #100;
+        filter_in =    -524288; #100;
+        filter_in =    -741455; #100;
+        filter_in =    -908093; #100;
+        filter_in =   -1012846; #100;
+        filter_in =   -1048576; #100;
+        filter_in =   -1012846; #100;
+        filter_in =    -908093; #100;
+        filter_in =    -741455; #100;
+        filter_in =    -524288; #100;
+        filter_in =    -271391; #100;
+        filter_in =          0; #100;
+        filter_in =     271391; #100;
+        filter_in =     524288; #100;
+        filter_in =     741455; #100;
+        filter_in =     908093; #100;
+        filter_in =    1012846; #100;
+        filter_in =    1048576; #100;
+        filter_in =    1012846; #100;
+        filter_in =     908093; #100;
+        filter_in =     741455; #100;
+        filter_in =     524288; #100;
+        filter_in =     271391; #100;
+        filter_in =          0; #100;
+        filter_in =    -271391; #100;
+        filter_in =    -524288; #100;
+        filter_in =    -741455; #100;
+        filter_in =    -908093; #100;
+        filter_in =   -1012846; #100;
+        filter_in =   -1048576; #100;
+        filter_in =   -1012846; #100;
+        filter_in =    -908093; #100;
+        filter_in =    -741455; #100;
+        filter_in =    -524288; #100;
+        filter_in =    -271391; #100;
+        filter_in =          0; #100;
+        filter_in =     271391; #100;
+        filter_in =     524288; #100;
+        filter_in =     741455; #100;
+        filter_in =     908093; #100;
+        filter_in =    1012846; #100;
+        filter_in =    1048576; #100;
+        filter_in =    1012846; #100;
+        filter_in =     908093; #100;
+        filter_in =     741455; #100;
+        filter_in =     524288; #100;
+        filter_in =     271391; #100;
+        filter_in =          0; #100;
+        filter_in =    -271391; #100;
+        filter_in =    -524288; #100;
+        filter_in =    -741455; #100;
+        filter_in =    -908093; #100;
+        filter_in =   -1012846; #100;
+        filter_in =   -1048576; #100;
+        filter_in =   -1012846; #100;
+        filter_in =    -908093; #100;
+        filter_in =    -741455; #100;
+        filter_in =    -524288; #100;
+        filter_in =    -271391; #100;
+        filter_in =          0; #100;
+        filter_in =     271391; #100;
+        filter_in =     524288; #100;
+        filter_in =     741455; #100;
+        filter_in =     908093; #100;
+        filter_in =    1012846; #100;
+        filter_in =    1048576; #100;
+        filter_in =    1012846; #100;
+        filter_in =     908093; #100;
+        filter_in =     741455; #100;
+        filter_in =     524288; #100;
+        filter_in =     271391; #100;
+        filter_in =          0; #100;
+        filter_in =    -271391; #100;
+        filter_in =    -524288; #100;
+        filter_in =    -741455; #100;
+        filter_in =    -908093; #100;
+        filter_in =   -1012846; #100;
+        filter_in =   -1048576; #100;
+        filter_in =   -1012846; #100;
+        filter_in =    -908093; #100;
+        filter_in =    -741455; #100;
+        filter_in =    -524288; #100;
+        filter_in =    -271391; #100;
+        filter_in =          0; #100;
+        filter_in =     271391; #100;
+        filter_in =     524288; #100;
+        filter_in =     741455; #100;
+        filter_in =     908093; #100;
+        filter_in =    1012846; #100;
+        filter_in =    1048576; #100;
+        filter_in =    1012846; #100;
+        filter_in =     908093; #100;
+        filter_in =     741455; #100;
+        filter_in =     524288; #100;
+        filter_in =     271391; #100;
+        filter_in =          0; #100;
+        filter_in =    -271391; #100;
+        filter_in =    -524288; #100;
+        filter_in =    -741455; #100;
+        filter_in =    -908093; #100;
+        filter_in =   -1012846; #100;
+        filter_in =   -1048576; #100;
+        filter_in =   -1012846; #100;
+        filter_in =    -908093; #100;
+        filter_in =    -741455; #100;
+        filter_in =    -524288; #100;
+        filter_in =    -271391; #100;
+        filter_in =          0; #100;
+        filter_in =     271391; #100;
+        filter_in =     524288; #100;
+        filter_in =     741455; #100;
+        filter_in =     908093; #100;
+
+        
+    end
+      
+endmodule
